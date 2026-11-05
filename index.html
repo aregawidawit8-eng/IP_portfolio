@@ -23,6 +23,34 @@
          height="200">
     <p>Software Engineering student and aspiring web developer.</p>
 
+    
+    <button type="button"
+            onclick="document.getElementById('hireDialog').showModal()">
+        Hire me
+    </button>
+
+    <dialog id="hireDialog">
+
+        <h2>Available for internships</h2>
+
+        <p>
+            I am available for internships and freelance web projects.
+        </p>
+
+        <p>
+            <a href="#contact">Send me a message</a>
+            or
+            <a href="files/cv.pdf" download>download my CV</a>.
+        </p>
+
+        <button type="button"
+                onclick="document.getElementById('hireDialog').close()">
+            Close
+        </button>
+
+    </dialog>
+
+
     <nav>
         <a href="#about">About</a> |
         <a href="#skills">Skills</a> |
@@ -140,6 +168,50 @@
             </li>
 
         </ul>
+        
+<h3>Skill Levels</h3>
+
+<p>
+    <label for="lvl-html">HTML</label>
+    <meter id="lvl-html" value="0.55" min="0" max="1">
+        55%
+    </meter>
+</p>
+
+<p>
+    <label for="lvl-html">django</label>
+    <meter id="lvl-html" value="0.75" min="0" max="1">
+        75%
+    </meter>
+</p>
+
+<p>
+    <label for="lvl-html">networking</label>
+    <meter id="lvl-html" value="0.35" min="0" max="1" low="0.4">
+        35%
+    </meter>
+</p>
+
+<p>
+    <label for="lvl-python">Python</label>
+    <meter id="lvl-python" value="0.75" min="0" max="1">
+        75%
+    </meter>
+</p>
+
+<p>
+    <label for="lvl-js">JavaScript</label>
+    <meter id="lvl-js"
+           value="0.2"
+           min="0"
+           max="1"
+           low="0.3"
+           high="0.7"
+           optimum="1">
+        20%
+    </meter>
+</p>
+
 
 
         <h3>My Web Development Learning Roadmap</h3>
@@ -291,6 +363,17 @@
             Addis Ababa Science and Technology University,
             2023 – present
         </p>
+
+        
+    <p>
+        <label for="degree">Degree progress:</label>
+
+        <progress id="degree" value="40" max="100">
+            40%
+        </progress>
+
+        40%
+    </p>
 
 
         <table border="1" cellpadding="8" cellspacing="0">
