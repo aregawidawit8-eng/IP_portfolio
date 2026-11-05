@@ -8,13 +8,15 @@
     <title>Dawit Aregawi | Portfolio</title>
     <meta name="keywords" content="dawit aregawi, portfolio, software engineering, web developer, HTML">
     <meta name="author" content="Dawit Aregawi">
-    <meta name="keywords" content="dawit aregawi, portfolio, software engineering, web developer, HTML">
 
     <link rel="icon" type="image/png" href="images/favicon.png?v=2">
 </head>
 
 <body>
 <header>
+     <canvas id="logo" width="120" height="120">
+        Dawit Aregawi logo
+    </canvas>
     <h1>Dawit Aregawi</h1>
     <img src="images/profile.jpg" 
          alt="Portrait of Dawit Aregawi smiling"
@@ -182,15 +184,15 @@ where the important content is &amp; helps screen readers.</p>
 </p>
 
 <p>
-    <label for="lvl-html">django</label>
-    <meter id="lvl-html" value="0.75" min="0" max="1">
+    <label for="lvl-django">django</label>
+    <meter id="lvl-django" value="0.75" min="0" max="1">
         75%
     </meter>
 </p>
 
 <p>
-    <label for="lvl-html">networking</label>
-    <meter id="lvl-html" value="0.35" min="0" max="1" low="0.4">
+    <label for="lvl-networking">networking</label>
+    <meter id="lvl-networking" value="0.35" min="0" max="1" low="0.4">
         35%
     </meter>
 </p>
@@ -215,8 +217,10 @@ where the important content is &amp; helps screen readers.</p>
     </meter>
 </p>
 
-
-
+<canvas id="skillChart" width="300" height="150">
+    Skill levels bar chart
+</canvas>
+    
         <h3>My Web Development Learning Roadmap</h3>
 
         <ol type="I">
@@ -346,10 +350,9 @@ where the important content is &amp; helps screen readers.</p>
                 Later I wrote this loop:
             </p>
 
-            <pre><code>for (int i = 0; i < n; i++) {
-    cout << "Hello, " << i << endl;
+            <pre><code>for (int i = 0; i &lt; n; i++) {
+    cout &lt;&lt; "Hello, " &lt;&lt; i &lt;&lt; endl;
 }</code></pre>
-
         </article>
 
     </section>
@@ -633,7 +636,6 @@ where the important content is &amp; helps screen readers.</p>
         <h3>Where I study</h3>
         <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.940058128082!2d38.80756471744384!3d8.885165400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b82a7e392203f%3A0xb05f440eacc98f9f!2z4Yqg4Yuy4Yi1IOGKoOGJoOGJoyDhiLPhi63hipXhiLXhipMg4Ym04Yqt4YqW4YiO4YyCIOGLqeGKkuGJqOGIreGIsuGJsg!5e0!3m2!1sam!2set!4v1793876154469!5m2!1sam!2set" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
 
-        width="600" height="300"
         title="Map of my university campus">
         </iframe>
         <h3>Send me a message</h3>
@@ -777,41 +779,44 @@ where the important content is &amp; helps screen readers.</p>
 
                     <select id="reason" name="reason" required>
 
-                        <optgroup label="Work">
+    <!-- Default option -->
+    <option value="" selected disabled>
+        -- Select a reason --
+    </option>
 
-                            <option value="internship">
-                                Internship offer
-                            </option>
+    <optgroup label="Work">
 
-                            <option value="freelance">
-                                Freelance project
-                            </option>
+        <option value="internship">
+            Internship offer
+        </option>
 
-                            <option value="job">
-                                Full-time job
-                            </option>
+        <option value="freelance">
+            Freelance project
+        </option>
 
-                        </optgroup>
+        <option value="job">
+            Full-time job
+        </option>
 
+    </optgroup>
 
-                        <optgroup label="Study">
+    <optgroup label="Study">
 
-                            <option value="group-project">
-                                Group project
-                            </option>
+        <option value="group-project">
+            Group project
+        </option>
 
-                            <option value="tutoring">
-                                Tutoring
-                            </option>
+        <option value="tutoring">
+            Tutoring
+        </option>
 
-                        </optgroup>
+    </optgroup>
 
+    <option value="other">
+        Other
+    </option>
 
-                        <option value="other">
-                            Other
-                        </option>
-
-                    </select>
+</select>
 
                     <br><br>
 
@@ -851,6 +856,70 @@ where the important content is &amp; helps screen readers.</p>
     <p>&copy; 2026 Dawit Aregawi. All rights reserved.</p>
     <p>Last updated: <time datetime="2026-11-05">5 November 2026</time></p>
 </footer>
+
+        <script>
+        const canvas = document.getElementById('logo');
+        const ctx = canvas.getContext('2d');
+
+        // 1. Blue square background
+        ctx.fillStyle = "#1f5fa8";
+        ctx.fillRect(0, 0, 120, 120);
+
+        // 2. White circle
+        ctx.beginPath();
+        ctx.arc(60, 60, 45, 0, 2 * Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+        // 3. Initials
+        ctx.fillStyle = "#1f5fa8";
+        ctx.font = "bold 36px Arial";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("DA", 60, 62);
+        </script>
+
+        <script>
+const chart = document.getElementById('skillChart');
+const chartCtx = chart.getContext('2d');
+
+// HTML: 55%
+chartCtx.fillStyle = "#1f5fa8";
+chartCtx.fillRect(15, 64, 30, 66);
+
+chartCtx.fillStyle = "black";
+chartCtx.font = "10px Arial";
+chartCtx.textAlign = "center";
+chartCtx.fillText("HTML", 30, 145);
+
+// Django: 75%
+chartCtx.fillStyle = "#1f5fa8";
+chartCtx.fillRect(75, 40, 30, 90);
+
+chartCtx.fillStyle = "black";
+chartCtx.fillText("Django", 90, 145);
+
+// Networking: 35%
+chartCtx.fillStyle = "#1f5fa8";
+chartCtx.fillRect(135, 88, 30, 42);
+
+chartCtx.fillStyle = "black";
+chartCtx.fillText("Networking", 150, 145);
+
+// Python: 75%
+chartCtx.fillStyle = "#1f5fa8";
+chartCtx.fillRect(195, 40, 30, 90);
+
+chartCtx.fillStyle = "black";
+chartCtx.fillText("Python", 210, 145);
+
+// JavaScript: 20%
+chartCtx.fillStyle = "#1f5fa8";
+chartCtx.fillRect(255, 106, 30, 24);
+
+chartCtx.fillStyle = "black";
+chartCtx.fillText("JavaScript", 270, 145);
+</script>
 
 </body>
 </html>
